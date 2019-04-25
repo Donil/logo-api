@@ -1,0 +1,13 @@
+version: "2"
+services:
+    api:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      image: logo-api
+      ports:
+        - "5000:80"
+      depends_on:
+        - db
+    db:
+      image: postgres
